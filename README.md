@@ -1,2 +1,2 @@
 # wx-web-tornado
-a web app for Wechat Official Accounts
+This is a web app demo for Wechat Official Accounts.
