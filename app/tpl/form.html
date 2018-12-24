@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>表单</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link href="{{ static_url('css/yinsho.css') }}" rel="stylesheet"/>
+    <link href="{{ static_url('css/main.css') }}" rel="stylesheet"/>
+    <link href="{{ static_url('font/iconfont.css') }}" rel="stylesheet"/>
+    <script src="{{ static_url('asset/jquery.min.js') }}"></script>
+    <script src="{{ static_url('asset/jquery-extend.js') }}"></script>
+    <script src="{{ static_url('asset/picker-city.js') }}"></script>
+    <script src="{{ static_url('asset/picker.js') }}"></script>
+    <script src="{{ static_url('asset/popup.js') }}"></script>
+    <script src="{{ static_url('asset/validate.js') }}"></script>
+    <script src="{{ static_url('js/tool.js') }}"></script>
+    <script src="{{ static_url('js/form.js') }}"></script>
+</head>
+<body ontouchstart>
+	<div class="container">
+        <form>
+        <div class="ys_cells">
+            <div class="ys_cell">
+                <div class="ys_cell_hd">
+                    <label>姓名</label>
+                </div>
+                <div class="ys_cell_bd">
+                    <input name="name" class="ys_input" type="text" placeholder="请输入至少两个中文" emptyTips="姓名不能为空" pattern="^[\u4e00-\u9fa5]{2,}$" notMatchTips="姓名必须是中文，至少两个字" required>
+                </div>
+            </div>
+            <div class="ys_cell ys_cell_select">
+                <div class="ys_cell_hd">
+                    <label>单选</label>
+                </div>
+                <div class="ys_cell_bd">
+                    <select class="ys_select" emptyTips="不能为空" required>
+                        <option value="" selected></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </div>
+            </div>
+            <label class="ys_cell ys_cell_checkbox" for="c3">
+                <div class="ys_cell_bd">
+                    勾选
+                </div>
+                <div>是</div>
+                <div class="ys_cell_ft">
+                    <input class="ys_checkbox" id="c3" type="checkbox" name="checkbox4" checked="">
+                    <i class="iconfont icon-c-radio-none"></i>
+                </div>
+            </label>
+            <div class="ys_cell">
+                <div class="ys_cell_hd">
+                    <label>地址选择</label>
+                </div>
+                <div class="ys_cell_bd">
+                    <input name="address" class="ys_input" type="text" placeholder="请选择省市县" emptyTips="地址不能为空" required>
+                </div>
+            </div>
+            <div class="ys_cell">
+                <div class="ys_cell_hd">
+                    <label>日期选择<label>
+                </div>
+                <div class="ys_cell_bd">
+                    <input name="date_select" class="ys_input" type="text" emptyTips="日期不能为空" required>
+                </div>
+            </div>
+            <div class="ys_cell">
+                <div class="ys_cell_hd">
+                    <label>日期</label>
+                </div>
+                <div class="ys_cell_bd">
+                    <input name="date" class="ys_input" type="date" beyondTips="日期不能小于当前日期" emptyTips="日期不能为空" required>
+                </div>
+            </div>
+            <div class="ys_cell">
+                <div class="ys_cell_hd">
+                    <label>手机号码</label>
+                </div>
+                <div class="ys_cell_bd">
+                    <input name="cellphone" class="ys_input" type="tel" placeholder="请输入手机号码" pattern="^[0-9]{11}$" emptyTips="手机号不能为空" notMatchTips="请输入正确的手机号" required>
+                </div>
+            </div>
+            <div class="ys_cell ys_cell_vcode">
+                <div class="ys_cell_hd">
+                    <label>验证码</label>
+                </div>
+                <div class="ys_cell_bd">
+                    <input name="vcode" class="ys_input" type="text" type="number" placeholder="短信验证码" pattern="[0-9]{6}" emptyTips="验证码不能为空" notMatchTips="验证码格式不正确" required>
+                </div>
+                <div class="ys_cell_ft">
+                    <a class="ys_input_btn" href="javascript:;" id="send_vcode">获取验证码</a>
+                </div>
+            </div>
+            <div class="ys_cell ys_cell_vcode">
+                <div class="ys_cell_hd">
+                    <label>验证码</label>
+                </div>
+                <div class="ys_cell_bd">
+                    <input name="pic_vcode" class="ys_input" type="text" placeholder="请输入验证码" pattern="^\w{4}$" emptyTips="验证码不能为空" notMatchTips="验证码不匹配" required>
+                </div>
+                <div class="ys_cell_ft">
+                    <img class="ys_vcode_img" src="{{ static_url('img/vcode.png') }}">
+                </div>
+            </div>
+        </div>
+        <div class="ys_agree">
+            <label for="ysagree">
+                <input class="ys_agree_checkbox" type="checkbox" id="ysagree" checked="checked">
+                <span class="ys_agree_text">
+                    本人已完全知悉并保证遵守
+                    <a class="ys_agree_clause open-popup" href="javascript:;" data-target="#clause-a">《xx章程》</a>
+                </span>
+            </label>
+        </div>
+	    <div class="ys_btns mt30">
+            <a class="ys_btn" id="submit" href="javascript:;">确定</a>
+        </div>
+        </form>
+        <div id="clause-a" class="ys_page">
+            <div class="ys_content ys_page_y">
+                <div class="ys_btns">
+                    <div class="clause_content">
+                        <h4>《秦皇岛银行信用卡章程》</h4>
+                        <p id="protocol1"></p>
+                    </div>
+                    <div class="pb60"></div>
+                </div>
+            </div>
+            <div class="ys_fixed_footer clause_btn">
+                <a class="ys_fixed_btn close-popup" href="javascript:;">继续</a>
+            </div>
+        </div>
+	</div>
+</body>
+</html>

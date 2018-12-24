@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+    <title>地图</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link href="{{ static_url('css/yinsho.css') }}" rel="stylesheet"/>
+    <link href="{{ static_url('css/main.css') }}" rel="stylesheet"/>
+    <script src="{{ static_url('asset/jquery.min.js') }}"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.4&key=7796562d588337066044f316ddf9c1ec&plugin=AMap.AdvancedInfoWindow"></script>
+    <script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+    <script src="{{ static_url('asset/validate.js') }}"></script>
+    <script src="{{ static_url('js/tool.js') }}"></script>
+    <script src="{{ static_url('js/map.js') }}"></script>
+    <style type="text/css">
+        body, html, #container {
+            height: 100%;
+            margin: 0px;
+        }
+        #panel {
+            position: fixed;
+            background-color: white;
+            max-height: 30%;
+            overflow-y: auto;
+            top: 10px;
+            right: 10px;
+            width: 280px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" tabindex="0"></div>
+    <div class="ys_fixed_footer">
+        <div class="flex_grow">
+            <div class="ys_cell ys_cell_select">
+                <div class="ys_cell_bd">
+                    <select class="ys_select" id="mylist">
+                        <option selected="" value="" data-path="https://wx.yinsho.com/map/branch/data/">选择网点</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="panel">
+</body>
+</html>
