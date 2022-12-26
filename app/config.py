@@ -23,6 +23,7 @@ JSAPI_TICKET_KEY = 'demo_jsapi_ticket'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_URL = BASE_URL + '/media'
 MEDIA_PATH = os.path.join(os.path.dirname(__file__), 'media')
+FONT_PATH = os.path.join(os.path.dirname(__file__), 'static/font/Arial.ttf')
 REDIS = {
     'HOST': 'localhost',
     'PORT': '6379',

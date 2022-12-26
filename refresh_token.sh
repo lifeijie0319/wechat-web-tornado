@@ -1,4 +1,4 @@
 #!/bin/bash
-source /home/tonglian/.bash_profile
-curl https://hz.wx.yinsho.com/wxdemo/wx/refresh_token
+source $HOME/.bash_profile
+curl http://localhost:7788/wxdemo/wx/refresh_token
 date

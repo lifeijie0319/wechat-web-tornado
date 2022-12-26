@@ -1,5 +1,5 @@
 #coding=utf-8
-#from .. import config
+from app import config
 from PIL import Image,ImageDraw, ImageFont, ImageFilter
 import random
 
@@ -9,11 +9,10 @@ class VerifyCode():
         self._letter_cases = 'abcdefghjkmnpqrstuvwxy'
         self._upper_cases = self._letter_cases.upper()
         self._numbers = ''.join(map(str, range(3, 10)))
-        pass
 
     def createCodeImage(self,size=(120,30),img_type='jpg',
                         mode='RGB',bg_color=(255,255,255),fg_color=(0,0,255),
-                            font_size=18,font_type='/home/tonglian/wxdemo/app/static/font/Arial.ttf',
+                            font_size=18,font_type=config.FONT_PATH,
                             length=4,draw_lines=True,n_line=(1,2),
                             draw_points=True,point_chance=2):
         width,height = size;
@@ -74,4 +73,4 @@ class VerifyCode():
 if __name__ == '__main__':
     pic_vcode = VerifyCode()
     code_img,capacha_code= pic_vcode.createCodeImage()
-    code_img.save('/home/tonglian/wxdemo/app/media/test.jpg','JPEG')
+    code_img.save('test.jpg','JPEG')

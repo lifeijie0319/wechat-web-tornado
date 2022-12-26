@@ -43,10 +43,3 @@ def verify(path1, path2):
     print('RESPONSE', r)
     print('CONTENT:', r.json())
 
-
-if __name__ == '__main__':
-    path1 = '/home/tonglian/wxdemo/app/media/face/oSDTiwq1vFtLARyBeBGhRpNeXczA.jpg'
-    path2 = '/home/tonglian/wxdemo/app/media/face/oSDTiwjobsmlFZNmNsvqvZsBLXLk.jpg'
-    #detect(path1)
-    #identify(path2)
-    verify(path1, path2)
